@@ -8,6 +8,9 @@ jobs:
       - checkout
       - bridgecrew/scan:
           api-key-variable: BC_API_KEY
-          directory: ./terraform
+          directory: ./terragoat/terraform
           output: json
           soft-fail: true
+      
+       
+      
