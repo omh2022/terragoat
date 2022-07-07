@@ -1,0 +1,19 @@
+version: 2.1
+orbs:
+  bridgecrew: bridgecrew/bridgecrew@1.0.5
+  workflows:
+    test-scan:
+      jobs:
+        - testcircle
+jobs:
+  build:
+    executor: bridgecrew/default
+    steps:
+      - checkout
+      - bridgecrew/scan:
+          api-key-variable: BC_API_KEY
+          directory: ./terragoat/terraform
+          output: json
+          soft-fail: true
+
+       
